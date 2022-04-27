@@ -73,3 +73,4 @@ print('Centers found by our algorithm:')
 print(centers[-1])
 
 kmeans_display(X, labels[-1])
+#tho
