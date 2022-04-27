@@ -14,7 +14,7 @@ X2 = np.random.multivariate_normal(means[2], cov, N)
 X = np.concatenate((X0, X1, X2), axis = 0) # concatenate : connect 3 matrix
 K = 3
 
-original_label = np.asarray([0]*N + [1]*N + [2]*N).T # np.asarray : concert input to an array
+original_label = np.asarray([0]*N + [1]*N + [2]*N).T # np.asarray : convert input to an array
 
 def kmeans_display(X, label):
     K = np.amax(label) + 1
