@@ -11,7 +11,7 @@ X0 = np.random.multivariate_normal(means[0], cov, N)
 X1 = np.random.multivariate_normal(means[1], cov, N)
 X2 = np.random.multivariate_normal(means[2], cov, N)
 
-X = np.concatenate((X0, X1, X2), axis = 0)
+X = np.concatenate((X0, X1, X2), axis = 0) # concatenate : connect 3 matrix
 K = 3
 
 original_label = np.asarray([0]*N + [1]*N + [2]*N).T
@@ -33,7 +33,7 @@ def kmeans_display(X, label):
 kmeans_display(X, original_label)
 def kmeans_init_centers(X, k):
     # randomly pick k rows of X as initial centers
-    return X[np.random.choice(X.shape[0], k, replace=False)]
+    return X[np.random.choice(X.shape[0], k, replace=False)] # replace = False : khong bi trung lap gia tri
 
 def kmeans_assign_labels(X, centers):
     # calculate pairwise distances btw data and centers
@@ -60,7 +60,7 @@ def kmeans(X, K):
     labels = []
     it = 0 
     while True:
-        labels.append(kmeans_assign_labels(X, centers[-1]))
+        labels.append(kmeans_assign_labels(X, centers[-1]))  # append : add at the end of the matrix
         new_centers = kmeans_update_centers(X, labels[-1], K)
         if has_converged(centers[-1], new_centers):
             break
@@ -68,9 +68,7 @@ def kmeans(X, K):
         it += 1
     return (centers, labels, it)
 
-    (centers, labels, it) = kmeans(X, K)
+(centers, labels, it) = kmeans(X, K)
 print('Centers found by our algorithm:')
 print(centers[-1])
-
 kmeans_display(X, labels[-1])
-#tho
