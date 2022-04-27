@@ -5,9 +5,9 @@ from scipy.spatial.distance import cdist
 np.random.seed(11)
 
 means = [[2, 2], [8, 3], [3, 6]]
-cov = [[1, 0], [0, 1]]
+cov = [[1, 0], [0, 1]] # ma tran chinh phuong
 N = 500
-X0 = np.random.multivariate_normal(means[0], cov, N)
+X0 = np.random.multivariate_normal(means[0], cov, N) # cov dung de xac dinh hinh dang cua cac diem du lieu
 X1 = np.random.multivariate_normal(means[1], cov, N)
 X2 = np.random.multivariate_normal(means[2], cov, N)
 
