@@ -67,7 +67,7 @@ def kmeans(X, K):
     labels = []
     it = 0 
     while True:
-        labels.append(kmeans_assign_labels(X, centers[-1]))  # append : add at the end of the matrix
+        labels.append(kmeans_assign_labels(X, centers[-1]))  # center cuoi cung cua array center
         new_centers = kmeans_update_centers(X, labels[-1], K)
         if has_converged(centers[-1], new_centers):
             break
