@@ -18,6 +18,7 @@ original_label = np.asarray([0]*N + [1]*N + [2]*N).T # np.asarray : convert inpu
 
 def kmeans_display(X, label):
     K = np.amax(label) + 1
+    # Return the maximum of an array or maximum along an axis.
     X0 = X[label == 0, :] # tach ma tran X theo chieu ngang thanh 3 ma tran X0, X1, X2 như ban dau
     X1 = X[label == 1, :] 
     X2 = X[label == 2, :]
@@ -59,6 +60,7 @@ def has_converged(centers, new_centers):
     # return True if two sets of centers are the same
     return (set([tuple(a) for a in centers]) == 
         set([tuple(a) for a in new_centers]))
+    # slimilar to list type
 
 def kmeans(X, K):
     centers = [kmeans_init_centers(X, K)]
