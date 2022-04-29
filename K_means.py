@@ -36,11 +36,15 @@ def kmeans_init_centers(X, k):
     return X[np.random.choice(X.shape[0], k, replace=False)] 
     # replace = False : khong bi trung lap gia tri 
     # x.shape[0] : number of rows, x.shape[1] : number of columns
+
 def kmeans_assign_labels(X, centers):
     # calculate pairwise distances btw data and centers
     D = cdist(X, centers)
     # return index of the closest center
+    # if you have 3 center it will return a array with 3 column show distance from data to center
     return np.argmin(D, axis = 1)
+    # Returns the indices of the minimum values along an axis. show the cluster this data belong to
+
 
 def kmeans_update_centers(X, labels, K):
     centers = np.zeros((K, X.shape[1]))
