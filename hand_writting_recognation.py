@@ -37,8 +37,10 @@ norm = plt.Normalize(vmin=A.min(), vmax=A.max())
 # image is now RGBA (512x512x4) 
 image = cmap(norm(A))
 
-import scipy.misc
-scipy.misc.imsave('aa.png', image)
+# import scipy.misc
+# scipy.misc.imsave('aa.png', image)
+import imageio
+imageio.imwrite('aa.png', image)
 
 print(type(pred_label))
 print(pred_label.shape)
